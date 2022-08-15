@@ -1,0 +1,183 @@
+.start_icon{
+  color: white;
+  margin-left: 0%;
+  margin-top: 0%;
+  width: 2050px;
+  height: 1200px;
+  
+}
+
+.version1{
+  background-image: url('mainphoto.jpeg');
+}
+
+.navigation_menu{
+    padding-top: 5%;
+    font-size: 22px;
+    margin-left: 13.5%;
+    font-weight: normal;
+    
+}
+
+.title_name{
+    font-weight: bold;
+    width: 380px;
+    font-size: 26px;
+}
+
+.linked{
+    height: 60px;
+}
+
+.title_icon_name{
+  margin-top: 215px;
+  margin-left: 240px;
+}
+
+.name_icon{
+    font-size: 140px;
+    font-weight: bold;
+}
+
+.phrase_icon{
+    font-size: 26px;
+    font-weight: bold;
+    height: 20px;
+}
+
+.numbers{
+    margin-left: 86.5%;
+    margin-top: -14%;
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+
+.one{
+    height: 50px;
+}
+.two{
+    font-size: 44px;
+    margin-left: -2.5%;
+    height: 50px;
+}
+.three{
+    font-size: 48px;
+    margin-left: -7%;
+    height: 50px;
+}
+
+.version2{
+  background-color: #141414;
+}
+
+
+.popular_tours{
+  width: 80%;
+  height: 50%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+.title_popular{
+  font-weight: bold;
+  font-size: 36px;
+  margin-left: 43.5%;
+  padding-top: 7%;
+}
+
+
+.ptour{
+  width: 357px;
+  height: 600px;
+  margin-left: 45px;
+  display: inline-block;
+  border: solid 0.5px white;
+  border-radius: 10px;
+  padding-top: 350px;
+}
+
+.Tour_name{
+  font-weight: bold;
+  font-size: 36px;
+  
+  margin-left: 120px;
+}
+
+.pone{
+  background-image: url('skyscrapper.jpg');
+  
+}
+.ptwo{
+  background-image: url('Eifeeltower.jpg');
+}
+
+.pthree{
+  background-image: url('Mountains.jpg');
+  
+}
+
+.pfour{
+  background-image: url('wintermountains.jpg');
+}
+
+.mini_body{
+  font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.version3{
+  background-image: url("hawai.jpeg");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a:link {
+    color: white; 
+  }
+a:visited {
+    color: white;
+  }
+a:hover {
+    color: black; 
+  }
+a:active {
+    color: white; 
+    
+  }
+a.top_menu:link, a.top_menu:visited, a.top_menu:hover, a.top_menu:active{border-bottom: 1px solid;}
+ 
+
+a.Tour_name:link {
+    color: white;
+    text-decoration: none;  
+  }
+a.Tour_name:visited {
+    color: white;
+  }
+a.Tour_name:hover {
+    color: white; 
+  }
+a.Tour_name:active {
+    color: white; 
+  }
