@@ -133,9 +133,34 @@
 }
 
 
+.name_icon_footer{
+  font-size: 100px;
+  font-weight: bold;
+  width: 40%;
+  margin-left: 11%;
+  padding-top: 10%;
+}
 
+.quote{
+  width: 33%;
+  margin-left: 11%;
+  padding-top: 2%;
+  font-size: 26px;
+  font-weight: bold;
+}
 
-
+.true_word{
+  display: inline-block;
+}
+.true_links{
+  margin-left: 50%;
+  
+  display: inline-block;
+}
+.prev{
+  margin-left: 55%;
+  margin-top: 10%;
+}
 
 
 
