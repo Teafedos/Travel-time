@@ -67,8 +67,10 @@
     height: 50px;
 }
 
+
+
 .version2{
-  background-color: #141414;
+  background-color: black;
 }
 
 
@@ -142,27 +144,20 @@
 }
 
 .quote{
-  width: 33%;
-  margin-left: 11%;
-  padding-top: 2%;
+  width: 65%;
+  margin-left: 25%;
+  margin-top: 5%;
   font-size: 26px;
   font-weight: bold;
 }
 
-.true_word{
-  display: inline-block;
-}
-.true_links{
-  margin-left: 50%;
-  
-  display: inline-block;
-}
-.prev{
-  margin-left: 55%;
-  margin-top: 10%;
+.screenshots{
+  width: 1%;
 }
 
-
+.stable_one{
+  width: 5%;
+}
 
 
 
@@ -190,7 +185,13 @@ a:active {
     color: white; 
     
   }
-a.top_menu:link, a.top_menu:visited, a.top_menu:hover, a.top_menu:active{border-bottom: 1px solid;}
+a.top_menu:link, a.top_menu:visited, a.top_menu:hover, a.top_menu:active{
+  border-bottom: 1px solid;
+}
+
+a.top_menu:hover{
+  color: orangered;
+}
  
 
 a.Tour_name:link {

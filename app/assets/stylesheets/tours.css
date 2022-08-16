@@ -1,0 +1,16 @@
+.title_tours{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 5%;
+    color: white;
+}
+.info_card{
+    margin-left: 4.4%;
+    margin-top: 10%;
+    color: black;
+}
+
+.tour_main{
+    background-color: black;
+}

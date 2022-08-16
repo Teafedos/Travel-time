@@ -1,0 +1,12 @@
+<div class="tour_main">
+    <p class="title_tours">OURS TOURS TODAY</p>    
+    <% @tours.each do |i|%>
+        <div class="card h-auto d-inline-block info_card" style="width: 300px;">
+            <img src="/assets/Tours/<%= i['city'] %>.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= i['contry'] + "," + i['city'] %></h5>
+                <p class="card-text"><%= i['description'] %></p>
+                <a href="#" class="btn btn-primary">Оплатить</a>
+            </div>
+        </div>
+    <% end %>

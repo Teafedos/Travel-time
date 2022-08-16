@@ -2,8 +2,8 @@
   <nav class="nav navigation_menu">
     <a class="nav-link active title_name top_menu" aria-current="page" href="#">WERLTON</a>
     <a class="nav-link active linked top_menu" aria-current="page" href="#">MAIN</a>
-    <a class="nav-link linked top_menu" href="#">ABOUT US</a>
-    <a class="nav-link linked top_menu" href="#">TOURS</a>
+    <a class="nav-link linked top_menu" href='<%= about_path%>'>ABOUT US</a>
+    <a class="nav-link linked top_menu" href="<%= tours_path%>">TOURS</a>
     <a class="nav-link linked top_menu" href="#">GALLERY</a>
     <a class="nav-link linked top_menu" href="#">REVIEWS</a>
     <a class="nav-link linked top_menu" href="#">CONTACTS</a>
@@ -53,12 +53,18 @@
 </div>
 
 <div class="start_icon version3">
-  <div class="true_word">
     <p class="name_icon_footer">DISCOVER THE WORLD IN A NEW WAY</p>
-    <p class="quote">"Attachment to things and comfort is the main obstacle to an interesting life. People, as a rule, do not realize that at any time they can throw anything out of their lives. Anytime. Instantly.»</p>
-    <p class="quote">©Carlos Castaneda</p>
-  </div>
-  <div class="true_links">
-    <a class="prev" href="#"><img src="/assets/prev_one.jpg" width="324px" height="190px"></a>
-  </div>
+    <table>
+      <th class="stable_one">
+        <p class="quote">"Attachment to things and comfort is the main obstacle to an interesting life. People, as a rule, do not realize that at any time they can throw anything out of their lives. Anytime. Instantly.»</p>
+        <p class="quote">©Carlos Castaneda</p>
+      </th>
+      <th class="screenshots">
+        <a class="prev" href="#"><img src="/assets/prev_one.jpg" width="324px" height="190px"></a>
+      </th>
+
+      <th class="screenshots">
+        <a class="prev" href="#"><img src="/assets/praha.jpeg" width="324px" height="190px"></a>
+      </th>
+    </table>
 </div>
