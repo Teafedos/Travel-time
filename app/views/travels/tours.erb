@@ -6,7 +6,7 @@
             <div class="card-body">
                 <h5 class="card-title"><%= i['contry'] + "," + i['city'] %></h5>
                 <p class="card-text"><%= i['description'] %></p>
-                <a href="#" class="btn btn-primary">Оплатить</a>
+                <a href="/tours/<%= i.id %>" class="btn btn-primary">Оплатить</a>
             </div>
         </div>
     <% end %>

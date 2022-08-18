@@ -6,4 +6,12 @@ class TravelsController < ApplicationController
   def tours
     @tours = Tour.all
   end
+
+  def show
+    @tour = Tour.find_by(params[:id])
+  end
+
+  def show
+    @tour = Tour.find_by(params[:id])
+  end
 end

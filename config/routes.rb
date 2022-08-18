@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   root "travels#index"
   get "/tavels", to: "travels#index"
   get "/about", to: "travels#about"
+
   get "/tours", to: "travels#tours"
+  get "/tours/:id", to: "travels#show"
+
+  get "/tours/new/:id", to: "travels#new"
 end

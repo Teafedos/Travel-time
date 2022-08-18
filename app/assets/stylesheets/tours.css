@@ -6,11 +6,12 @@
     color: white;
 }
 .info_card{
-    margin-left: 4.4%;
+    margin-left: 5%;
     margin-top: 10%;
     color: black;
 }
 
 .tour_main{
     background-color: black;
+    height: 2500px;
 }

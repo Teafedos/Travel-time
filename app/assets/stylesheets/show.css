@@ -1,0 +1,28 @@
+.tour_list{
+    background-color: black;
+}
+
+.title_tour{
+    margin-left: 30%;
+}
+.tour_image{
+    width: 50%;
+    height: 60%;
+    margin-top: 5%;
+}
+
+.desription_tour{
+    width: 50%;
+    height: 60%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.link_to_buy{
+    background-color: blue;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+
+    margin-left: 20%;
+}
