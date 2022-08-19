@@ -1,1 +1,55 @@
-<h1> Here will be new list</h1>
+<input class="form-control" type="text" value="<%= @tour.city%>" aria-label="привер ввода только для чтения" readonly>
+<%= form_with model: @tour, url: travels_path, method: :post do |form| %>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
+    <%= form.text_field :email %>
+    <div id="emailHelp" class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">ФИО покупателя</label>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <br>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Количество людей</label>
+    <%= form.text_field  :quantity,  :value => 1 %>
+    
+  </div>
+
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Количество ночей</label>
+    <%= form.text_field  :quantity_days,  :value => 1 %>
+    
+  </div>
+  
+  
+  
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Отель</label>
+    <%= form.select  :hotel,  :"Люкс" => 5000, :"Обычный" => 3000 %>
+    <label for="exampleInputEmail1" class="form-label">Питание</label>
+    <%= form.select  :eat,  :"Завтрак" => 500, :"Ужин" => 500, :"Завтрак/Ужин" => 1000%>
+  </div>
+
+    <input value="Добавить" onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value)", type="button" id="upper">
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Общая стоимость</label>
+    <%= form.text_field :sum_quantity,  :value => @tour.cost  %>
+  </div>
+
+
+  
+  <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value)">Отправить</button>
+<% end %>
+
+
+<script>
+    function sum_cost(cost, days, humans, hotel, eat) {
+        document.getElementById('tour_sum_quantity').value = cost + (days * humans * (parseInt(hotel) + parseInt(eat)));
+    }
+</script>
