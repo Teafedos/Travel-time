@@ -1,5 +1,6 @@
-<div class="start_icon tour_list">
-    <h1 class="title_tour"><%= @tour.contry + ", " + @tour.city %></h1>
+<div class=" tour_body">
+<div class="tour_list">
+    <h1 class="title_tour"><%= @tour.contry + ", " + @tour.city  %></h1>
     <table>
     <th class="desription_tour"><h5><%= @tour.description %></h5></th>
     <th><img src="/assets/Tours/<%= @tour['city'] %>.jpeg" class="tour_image" alt="..."></th>
@@ -7,3 +8,5 @@
 
     <a href="/tours/new/<%= @tour.id %>" class="link_to_buy"> Buy tour</a>
 </div>
+</div>
+

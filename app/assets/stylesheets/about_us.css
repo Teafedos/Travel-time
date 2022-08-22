@@ -1,5 +1,7 @@
 .main_list{
     background-image: url("about_us/about.jpg");
+    color: white;
+    min-height: 1200px;
 }
 
 .title_about{

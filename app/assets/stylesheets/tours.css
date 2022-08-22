@@ -4,6 +4,7 @@
     text-align: center;
     padding-top: 5%;
     color: white;
+    
 }
 .info_card{
     margin-left: 5%;
@@ -14,4 +15,9 @@
 .tour_main{
     background-color: black;
     height: 2500px;
+}
+
+.tour_body{
+    height: 1200px;
+    color: white;
 }
