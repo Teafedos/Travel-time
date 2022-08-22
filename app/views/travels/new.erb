@@ -1,3 +1,4 @@
+<div class ="container new_list">
 <input class="form-control" type="text" value="<%= @tour.city%>" aria-label="привер ввода только для чтения" readonly>
 <%= form_with model: @tour, url: travels_path, method: :post do |form| %>
 
@@ -9,6 +10,7 @@
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">ФИО покупателя</label>
+    <br>
     <%= form.text_field :full_name %>
   </div>
 
@@ -16,26 +18,28 @@
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Количество людей</label>
-    <%= form.text_field  :quantity,  :value => 1 %>
-    
+    <br>
+    <%= form.text_field  :quantity,  :value => 1 , :type  => "number" %>
   </div>
 
     <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Количество ночей</label>
-    <%= form.text_field  :quantity_days,  :value => 1 %>
+    <br>
+    <%= form.text_field  :quantity_days,  :value => 1 , :type  => "number" %>
     
   </div>
   
   
   
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Отель</label>
+    <label for="exampleInputEmail1" class="form-label">Тип номера</label>
     <%= form.select  :hotel,  :"Люкс" => 5000, :"Обычный" => 3000 %>
-    <label for="exampleInputEmail1" class="form-label">Питание</label>
+    <br>
+    <label for="exampleInputEmail1" class="form-label">Тип питания</label>
     <%= form.select  :eat,  :"Завтрак" => 500, :"Ужин" => 500, :"Завтрак/Ужин" => 1000%>
   </div>
 
-    <input value="Добавить" onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value)", type="button" id="upper">
+    <input value="Рассчитать стоимость" onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value)", type="button" id="upper">
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Общая стоимость</label>
@@ -46,7 +50,7 @@
   
   <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value)">Отправить</button>
 <% end %>
-
+</div>
 
 <script>
     function sum_cost(cost, days, humans, hotel, eat) {
