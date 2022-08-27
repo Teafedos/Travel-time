@@ -1,7 +1,8 @@
 <div class ="container new_list">
-<input class="form-control" type="text" value="<%= @tour.city%>" aria-label="привер ввода только для чтения" readonly>
-<%= form_with model: @tour, url: travels_path, method: :post do |form| %>
 
+<%= form_with model: @tour, url: order_travel_path(@tour.id) , method: :post do |form| %>
+  
+  
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
     <%= form.text_field :email %>
