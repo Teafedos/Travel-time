@@ -5,6 +5,7 @@ class CreateTours < ActiveRecord::Migration[7.0]
       t.string :city
       t.integer :cost
       t.string :description
+      t.integer :insales_id
 
       t.timestamps
     end

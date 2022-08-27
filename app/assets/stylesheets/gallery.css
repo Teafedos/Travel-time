@@ -1,0 +1,30 @@
+.title_gallery{
+    font-weight: bold;
+    margin-left: 25%;
+    font-size: 50px;
+    max-width: 50%;
+    min-width: 20%;
+}
+
+.card{
+    display: inline-block;
+}
+
+.gallery_list{
+    margin-left: 12%;
+}
+
+.body-card-gallery{
+    opacity: 0.8;
+    background-color: black;
+}
+
+.gallery_page{
+    background-color: black;
+    color: white;
+    min-height: 1200px;
+}
+
+.text-card-gallery{
+    text-align: center;
+}

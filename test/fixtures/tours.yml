@@ -5,9 +5,11 @@ one:
   city: MyString
   cost: 1
   description: MyString
+  insales_id: 1
 
 two:
   contry: MyString
   city: MyString
   cost: 1
   description: MyString
+  insales_id: 1
