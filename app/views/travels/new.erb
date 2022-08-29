@@ -57,12 +57,12 @@
 
 
   
-  <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value)">Отправить</button>
+  <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value)">Отправить</button>
 <% end %>
 </div>
 
 <script>
-    function sum_cost(cost, days, humans, hotel, eat) {
+    function sum_cost(cost, days, humans, hotel, eat, trans) {
       if(days <= 0){
         document.getElementById('tour_quantity_days').value = 1;
         days = 1
@@ -71,6 +71,6 @@
         document.getElementById('tour_quantity').value = 1; 
         humans = 1
       }
-        document.getElementById('tour_sum_quantity').value = (cost * humans) + (days * humans * (parseInt(hotel) + parseInt(eat)));
+        document.getElementById('tour_sum_quantity').value = (cost * humans) + (days * parseInt(trans) * humans * (parseInt(hotel) + parseInt(eat)));
     }
 </script>

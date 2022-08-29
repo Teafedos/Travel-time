@@ -30,8 +30,27 @@ class TravelsController < ApplicationController
         "order_lines_attributes": [
           {
             "product_id"=> (@tour.insales_id),
+            "quantity"=> (params[:tour]["quantity"])
+          },
+          {
+            "product_id"=> 320181375,
+            "quantity"=> (params[:tour]["quantity_days"].to_i),
+            "sale_price" => (params[:tour]["hotel"].to_i * params[:tour]["quantity"].to_i)
+          },
+          {
+            "product_id"=> 320210766,
             "quantity"=> (params[:tour]["quantity"]),
-            "sale_price" => 10
+            "sale_price" => (params[:tour]["trans"].to_i * params[:tour]["quantity"].to_i)
+          },
+          {
+            "product_id"=> 320412270,
+            "quantity"=> (params[:tour]["quantity"]),
+            "sale_price" => (params[:tour]["eat"].to_i)
+          },
+          {
+            "product_id"=> 320412768,
+            "quantity"=> (params[:tour]["quantity"]),
+            "sale_price" => (params[:tour]["excursion"].to_i)
           }
         ],
 
