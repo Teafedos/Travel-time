@@ -23,7 +23,7 @@ class TravelsController < ApplicationController
     
     @tour = Tour.find_by(id:params[:id])
 
-    binding.pry
+    
     info = {
       "order": {
 
