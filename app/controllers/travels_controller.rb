@@ -30,17 +30,19 @@ class TravelsController < ApplicationController
         "order_lines_attributes": [
           {
             "product_id"=> (@tour.insales_id),
-            "quantity"=> (params[:tour]["quantity"])
+            "quantity"=> (params[:tour]["quantity"]),
+            "sale_price" => (@tour.cost),
+            "comment" => "Hello world!"
           },
           {
             "product_id"=> 320181375,
-            "quantity"=> (params[:tour]["quantity_days"].to_i),
-            "sale_price" => (params[:tour]["hotel"].to_i * params[:tour]["quantity"].to_i)
+            "quantity"=> (params[:tour]["quantity"].to_i),
+            "sale_price" => (params[:tour]["hotel"].to_i * params[:tour]["quantity_days"].to_i)
           },
           {
             "product_id"=> 320210766,
             "quantity"=> (params[:tour]["quantity"]),
-            "sale_price" => (params[:tour]["trans"].to_i * params[:tour]["quantity"].to_i)
+            "sale_price" => (params[:tour]["trans"].to_i)
           },
           {
             "product_id"=> 320412270,
@@ -67,7 +69,7 @@ class TravelsController < ApplicationController
         },
 
         "delivery_variant_id"=> 3030673,
-        "payment_gateway_id"=> 1424329,
+        "payment_gateway_id"=> 1424329
       }
 
     }

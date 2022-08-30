@@ -37,7 +37,7 @@
     <%= form.select  :trans,  :"Не выбрано" => 0, :"Да" => 2000 %>
     <br>
     <label for="exampleInputEmail1" class="form-label">Отель</label>
-    <%= form.select  :hotel,  :"Holiday inn" => 5000, :"Alzur" => 3000 %>
+    <%= form.select  :hotel,  :"Люкс" => 10000, :"Стандартный" => 5000, :"Бюджетный" => 2000%>
     <br>
     <label for="exampleInputEmail1" class="form-label">Тип питания</label>
     <%= form.select  :eat, :"Не выбрано" => 0,  :"Завтрак" => 500, :"Ужин" => 500, :"Завтрак/Ужин" => 1000%>
@@ -48,7 +48,7 @@
     <%= form.select  :excursion, :"Не выбрано" => 0, :"Да" => 2000%>
   </div>
 
-    <input value="Рассчитать стоимость" onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value)", type="button" id="upper">
+    <input value="Рассчитать стоимость" onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value, document.getElementById('tour_excursion').value)", type="button" id="upper">
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Общая стоимость</label>
@@ -57,12 +57,12 @@
 
 
   
-  <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value)">Отправить</button>
+  <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value, document.getElementById('tour_excursion').value)">Отправить</button>
 <% end %>
 </div>
 
 <script>
-    function sum_cost(cost, days, humans, hotel, eat, trans) {
+    function sum_cost(cost, days, humans, hotel, eat, trans, excursion) {
       if(days <= 0){
         document.getElementById('tour_quantity_days').value = 1;
         days = 1
@@ -71,6 +71,7 @@
         document.getElementById('tour_quantity').value = 1; 
         humans = 1
       }
-        document.getElementById('tour_sum_quantity').value = (cost * humans) + (days * parseInt(trans) * humans * (parseInt(hotel) + parseInt(eat)));
+        document.getElementById('tour_sum_quantity').value = ( (parseInt(hotel) * days * humans) + ( (parseInt(eat) + parseInt(trans) + parseInt(excursion)) * humans) + (cost * humans) ) ;
+        
     }
 </script>
