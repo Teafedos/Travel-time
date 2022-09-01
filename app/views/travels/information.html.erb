@@ -1,0 +1,21 @@
+<div class="container-fluid order_background">
+  <nav class="nav navigation_menu">
+    <a class="nav-link active title_name top_menu" aria-current="page" href="#">WERLTON</a>
+    <a class="nav-link active linked top_menu" aria-current="page" href="#">MAIN</a>
+    <a class="nav-link linked top_menu" href='<%= about_path%>'>ABOUT US</a>
+    <a class="nav-link linked top_menu" href="<%= tours_path%>">TOURS</a>
+    <a class="nav-link linked top_menu" href="<%= gallery_path%>">GALLERY</a>
+    <a class="nav-link linked top_menu" href="<%= information_path%>">ORDERS</a>
+    <a class="nav-link linked top_menu" href="#">CONTACTS</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </nav>
+  <br><br>
+  <div class="container search_icon">
+  <%= form_with url: search_path, method: :get do |form| %>
+      <label for="exampleInputEmail1" class="ordinary_text">Order number:</label>
+      <%= form.text_field :query, :class => 'search_field' %>
+      <%= form.submit "Search" %>
+
+  <% end %>
+  </div>
+</div>

@@ -1,4 +1,14 @@
 <div class="tour_main">
+  <nav class="nav navigation_menu">
+    <a class="nav-link active title_name top_menu" aria-current="page" href="#">WERLTON</a>
+    <a class="nav-link active linked top_menu" aria-current="page" href="/travels">MAIN</a>
+    <a class="nav-link linked top_menu" href='<%= about_path%>'>ABOUT US</a>
+    <a class="nav-link linked top_menu" href="#">TOURS</a>
+    <a class="nav-link linked top_menu" href="<%= gallery_path%>">GALLERY</a>
+    <a class="nav-link linked top_menu" href="<%= information_path%>">ORDERS</a>
+    <a class="nav-link linked top_menu" href="#">CONTACTS</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </nav>
     <p class="title_tours">OURS TOURS TODAY</p>    
     <% @tours.each do |i|%>
         <div class="card h-auto d-inline-block info_card" style="width: 300px;">

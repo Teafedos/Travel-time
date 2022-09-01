@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tour: one
+  insales_order: 1
+  email: MyString
+  name: MyString
+  quantity: 1
+  days: 1
+  trans: MyString
+  hotel: MyString
+  eat: MyString
+  room_two: 1
+  rooms_three: 1
+  rooms_four: 1
+  excursion: MyString
+
+two:
+  tour: two
+  insales_order: 1
+  email: MyString
+  name: MyString
+  quantity: 1
+  days: 1
+  trans: MyString
+  hotel: MyString
+  eat: MyString
+  room_two: 1
+  rooms_three: 1
+  rooms_four: 1
+  excursion: MyString

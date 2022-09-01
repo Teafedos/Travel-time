@@ -1,0 +1,15 @@
+.order_background{
+    background-image: url("order.jpg");
+    width: 100%;
+    margin-left: -100px;
+    height: 70rem;
+}
+
+.search_field{
+    margin-left: 5%;
+    min-width: 40%;
+}
+
+.search_icon{
+    margin-top: 10%;
+}
