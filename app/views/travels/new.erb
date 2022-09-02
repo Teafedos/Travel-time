@@ -1,5 +1,5 @@
-<div class ="container new_list">
-
+<div class ="container-fluid new_list">
+<h1>Tour in <%= @tour.city%></h1>
 <%= form_with model: @tour, url: order_travel_path(@tour.id) , method: :post do |form| %>
   
   
@@ -23,7 +23,7 @@
     <%= form.text_field  :quantity,  :value => 1 , :type  => "number" %>
   </div>
 
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Количество ночей</label>
     <br>
     <%= form.text_field  :quantity_days,  :value => 1 , :type  => "number" %>
@@ -34,21 +34,32 @@
   
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Трансфер</label>
-    <%= form.select  :trans,  :"Не выбрано" => 0, :"Да" => 2000 %>
+    <%= form.select  :trans,  :"Не выбрано" => 0, :"Да" => @tour.transfer %>
     <br>
     <label for="exampleInputEmail1" class="form-label">Отель</label>
-    <%= form.select  :hotel,  :"Люкс" => 10000, :"Стандартный" => 5000, :"Бюджетный" => 2000%>
+    <%= form.select  :hotel,  :"Люкс" => @tour.hotel_lux, :"Стандартный" => @tour.hotel_standart, :"Бюджетный" => @tour.hotel_budget%>
     <br>
-    <label for="exampleInputEmail1" class="form-label">Тип питания</label>
-    <%= form.select  :eat, :"Не выбрано" => 0,  :"Завтрак" => 500, :"Ужин" => 500, :"Завтрак/Ужин" => 1000%>
+    <label for="exampleInputEmail1" class="form-label">Питание</label>
+    <%= form.select  :eat, :"Не выбрано" => 0, :"Завтрак/Ужин" => @tour.cost_eat%>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Количество номеров:</label>
+    <br>
+    <label for="exampleInputEmail1" class="form-label">Двухместные(одна большая кровать)</label>
+    <%= form.text_field  :rooms_two,  :value => 1 , :type  => "number" %>
+    <label for="exampleInputEmail1" class="form-label">Трехместные(одна большая кровать и одна односпальная)</label>
+    <%= form.text_field  :rooms_three,  :value => 0 , :type  => "number" %>
+    <label for="exampleInputEmail1" class="form-label">Четырехместные(две больших кровати)</label>
+    <%= form.text_field  :rooms_four,  :value => 0 , :type  => "number" %>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Экскурсии</label>
-    <%= form.select  :excursion, :"Не выбрано" => 0, :"Да" => 2000%>
+    <%= form.select  :excursion, :"Не выбрано" => 0, :"Да" => @tour.excursion %>
   </div>
 
-    <input value="Рассчитать стоимость" onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value, document.getElementById('tour_excursion').value)", type="button" id="upper">
+    <input value="Рассчитать стоимость" onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value, document.getElementById('tour_rooms_two').value, document.getElementById('tour_rooms_three').value, document.getElementById('tour_rooms_four').value, document.getElementById('tour_excursion').value)", type="button" id="upper">
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Общая стоимость</label>
@@ -57,12 +68,12 @@
 
 
   
-  <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value, document.getElementById('tour_excursion').value)">Отправить</button>
+  <button type="submit" class="btn btn-primary", onclick="sum_cost(<%= @tour.cost %>, document.getElementById('tour_quantity_days').value, document.getElementById('tour_quantity').value, document.getElementById('tour_hotel').value, document.getElementById('tour_eat').value, document.getElementById('tour_trans').value, document.getElementById('tour_rooms_two').value, document.getElementById('tour_rooms_three').value, document.getElementById('tour_room_four').value, document.getElementById('tour_excursion').value)">Отправить</button>
 <% end %>
 </div>
 
 <script>
-    function sum_cost(cost, days, humans, hotel, eat, trans, excursion) {
+    function sum_cost(cost, days, humans, hotel, eat, trans, roomone, roomtwo, roomthree, excursion) {
       if(days <= 0){
         document.getElementById('tour_quantity_days').value = 1;
         days = 1
@@ -71,7 +82,7 @@
         document.getElementById('tour_quantity').value = 1; 
         humans = 1
       }
-        document.getElementById('tour_sum_quantity').value = ( (parseInt(hotel) * days * humans) + ( (parseInt(eat) + parseInt(trans) + parseInt(excursion)) * humans) + (cost * humans) ) ;
+        document.getElementById('tour_sum_quantity').value = ( (((parseInt(roomone) + parseInt(roomtwo) + parseInt(roomthree)) * parseInt(hotel))* days) + ( (parseInt(eat) + parseInt(trans) + parseInt(excursion)) * humans) + (cost * humans) ) ;
         
     }
 </script>

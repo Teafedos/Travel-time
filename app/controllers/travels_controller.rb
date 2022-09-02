@@ -20,10 +20,8 @@ class TravelsController < ApplicationController
   end
 
   def order
-    
+# creating order
     @tour = Tour.find_by(id:params[:id])
-
-    
     info = {
       "order": {
 
@@ -31,13 +29,12 @@ class TravelsController < ApplicationController
           {
             "product_id"=> (@tour.insales_id),
             "quantity"=> (params[:tour]["quantity"]),
-            "sale_price" => (@tour.cost),
-            "comment" => "Hello world!"
+            "sale_price" => (@tour.cost)
           },
           {
             "product_id"=> 320181375,
-            "quantity"=> (params[:tour]["quantity"].to_i),
-            "sale_price" => (params[:tour]["hotel"].to_i * params[:tour]["quantity_days"].to_i)
+            "quantity"=> (params[:tour]["rooms_two"].to_i + params[:tour]["rooms_three"].to_i + params[:tour]["rooms_four"].to_i),
+            "sale_price" => (params[:tour]["hotel"].to_i * params[:tour]["quantity"].to_i)
           },
           {
             "product_id"=> 320210766,
@@ -80,15 +77,54 @@ class TravelsController < ApplicationController
     request.basic_auth("1a8db035b2414bf12174450baaa309b5", "b16753ff04a4b1927408adad7c889e05")
     request.body = info.to_json
     response = http.request(request)
-    puts response.body
+    info_order = JSON.parse(response.body)
+    puts params[:tour]["rooms_two"]
+# inputs params in DB Order
+    if params[:tour]["hotel"].to_i == @tour.hotel_lux
+      hotel = "hotel_lux"
+    elsif params[:tour]["hotel"].to_i == @tour.hotel_standart
+      hotel = "hotel_standart"
+    else
+      hotel = "hotel_budget"
+    end
+
+    if params[:tour]["eat"].to_i == @tour.cost_eat
+      eat = "eat"
+    else
+      eat = "no eat"
+    end
+
+    if params[:tour]["trans"].to_i == @tour.transfer
+      trans = "Yes"
+    else
+      trans = "Not"
+    end
+
+    if params[:tour]["excursion"].to_i == @tour.excursion
+      excursion = "Yes"
+    else
+      excursion = "Not"
+    end
+
+    @order = Order.new(tour_id:@tour.id, insales_order:info_order["order_lines"][0]["order_id"], email:params[:tour]["email"], name:params[:tour]["full_name"], quantity:params[:tour]["quantity"].to_i, days:params[:tour]["quantity_days"].to_i, trans:"Yes", hotel:hotel, eat:eat, room_two:params[:tour]["rooms_two"].to_i , rooms_three:params[:tour]["rooms_three"].to_i , rooms_four: params[:tour]["rooms_four"].to_i, excursion:excursion)
     
-    
-    
-    redirect_to :root
+    if @order.save
+      redirect_to successfull_travel_path(@order.id)
+    else
+      render :root, status: :unprocessable_entity
+    end
   end
 
   def gallery
     @photos = Gallery.all
+  end
+
+  def successfull
+    @order = Order.find_by(id:params["id"])
+  end
+
+  def search
+    
   end
 
   private

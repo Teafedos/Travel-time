@@ -1,0 +1,22 @@
+.information_background{
+    background-image: url('successfull.jpg');
+    height: 1080px;
+    max-width: 100%;
+    min-width: 20%;
+    color: white;
+}
+
+.success{
+    font-weight: bold;
+}
+
+.main_success{
+    font-size: 36px;
+    margin-left: 20%;
+}
+
+.ordinary_text{
+    font-size: 26px;
+    color: white;
+    margin-left: 25%;
+}

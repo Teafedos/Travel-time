@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :travels do
     post 'order', on: :member
+    
+
+    get 'successfull', on: :member
   end
 
   get "/about", to: "travels#about"
@@ -17,4 +20,7 @@ Rails.application.routes.draw do
   get "/tours/new/:id", to: "travels#new"
 
   get "/gallery", to: "travels#gallery"
+
+  get "/information", to: "travels#information"
+  get "/search", to: "travels#search" 
 end

@@ -1,0 +1,16 @@
+<div class="container-fluid information_background">
+  <nav class="nav navigation_menu">
+    <a class="nav-link active title_name top_menu" aria-current="page" href="#">WERLTON</a>
+    <a class="nav-link active linked top_menu" aria-current="page" href="#">MAIN</a>
+    <a class="nav-link linked top_menu" href='<%= about_path%>'>ABOUT US</a>
+    <a class="nav-link linked top_menu" href="<%= tours_path%>">TOURS</a>
+    <a class="nav-link linked top_menu" href="<%= gallery_path%>">GALLERY</a>
+    <a class="nav-link linked top_menu" href="<%= information_path%>">ORDERS</a>
+    <a class="nav-link linked top_menu" href="#">CONTACTS</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </nav>
+  <p class="success main_success">YOUR ORDER №<%= @order.id%> HAS BEEN SUCCESSFULLY CREATED!</p>
+  <br>
+  <p class="success ordinary_text"><%= @order.name%>, you can view the order at any time in the tab <a href="<%=information_path%>">ORDERS</a></p>
+  <p class="success ordinary_text">Write down your order number, it is necessary to search for an order!</p>
+</div>

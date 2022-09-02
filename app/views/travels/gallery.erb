@@ -1,4 +1,15 @@
 <div class="gallery_page image_bg">
+  <nav class="nav navigation_menu">
+    <a class="nav-link active title_name top_menu" aria-current="page" href="#">WERLTON</a>
+    <a class="nav-link active linked top_menu" aria-current="page" href="/travels">MAIN</a>
+    <a class="nav-link linked top_menu" href='<%= about_path%>'>ABOUT US</a>
+    <a class="nav-link linked top_menu" href="<%= tours_path%>">TOURS</a>
+    <a class="nav-link linked top_menu" href="#">GALLERY</a>
+    <a class="nav-link linked top_menu" href="<%= information_path%>">ORDERS</a>
+    <a class="nav-link linked top_menu" href="#">CONTACTS</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </nav>
+  <br>
 <p class="title_gallery">OUR TRAVELS</p>
 <% @photos.each do |photo|%>
 <div class="gallery_list">
