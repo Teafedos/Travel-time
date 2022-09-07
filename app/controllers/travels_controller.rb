@@ -124,7 +124,8 @@ class TravelsController < ApplicationController
   end
 
   def search
-    
+    @order = Order.find_by(id:params['query'])
+    @tour = Tour.find_by(id:@order.tour_id)
   end
 
   private

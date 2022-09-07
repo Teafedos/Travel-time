@@ -5,9 +5,25 @@
     <a class="nav-link linked top_menu" href='<%= about_path%>'>ABOUT US</a>
     <a class="nav-link linked top_menu" href="<%= tours_path%>">TOURS</a>
     <a class="nav-link linked top_menu" href="<%= gallery_path%>">GALLERY</a>
-    <a class="nav-link linked top_menu" href="<%= information_path%>">ORDERS</a>
+    <a class="nav-link linked top_menu" href="<%= information_path %>">ORDERS</a>
     <a class="nav-link linked top_menu" href="#">CONTACTS</a>
     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </nav>
   <br><br>
+  <div class="container info_about_order">
+    <h1 class="order_tour_info">Данные о заказе!</h1>
+    <h4 class="order_tour_info">Номер заказа: <%= @order.id %></h4>
+    <h4 class="order_tour_info">Тур в: <%= @tour.city %></h4>
+    <h4 class="order_tour_info">Почта: <%= @order.email %></h4>
+    <h4 class="order_tour_info">Имя покупателя: <%= @order.name %></h4>
+    <h4 class="order_tour_info">Количество персон: <%= @order.quantity %></h4>
+    <h4 class="order_tour_info">Количество дней: <%= @order.days %></h4>
+    <h4 class="order_tour_info">Трансфер: <%= @order.trans %></h4>
+    <h4 class="order_tour_info">Отель: <%= @order.hotel %></h4>
+    <h4 class="order_tour_info">Еда: <%= @order.eat %></h4>
+    <h4 class="order_tour_info">Двухместные комнаты: <%= @order.room_two %></h4>
+    <h4 class="order_tour_info">Трехместные комнаты: <%= @order.rooms_three %></h4>
+    <h4 class="order_tour_info">Четырехместные комнаты: <%= @order.rooms_four %></h4>
+  </div>
+   
 </div>
